@@ -1,46 +1,4 @@
 {
-  "__inputs": [
-    {
-      "name": "DS_INFLUXDB",
-      "label": "InfluxDB",
-      "description": "",
-      "type": "datasource",
-      "pluginId": "influxdb",
-      "pluginName": "InfluxDB"
-    }
-  ],
-  "__requires": [
-    {
-      "type": "panel",
-      "id": "gauge",
-      "name": "Gauge",
-      "version": ""
-    },
-    {
-      "type": "grafana",
-      "id": "grafana",
-      "name": "Grafana",
-      "version": "8.1.0"
-    },
-    {
-      "type": "panel",
-      "id": "graph",
-      "name": "Graph (old)",
-      "version": ""
-    },
-    {
-      "type": "datasource",
-      "id": "influxdb",
-      "name": "InfluxDB",
-      "version": "1.0.0"
-    },
-    {
-      "type": "panel",
-      "id": "stat",
-      "name": "Stat",
-      "version": ""
-    }
-  ],
   "annotations": {
     "list": [
       {
@@ -64,8 +22,8 @@
   "editable": true,
   "gnetId": 11900,
   "graphTooltip": 1,
-  "id": null,
-  "iteration": 1628584967931,
+  "id": 2,
+  "iteration": 1631093337779,
   "links": [],
   "panels": [
     {
@@ -79,12 +37,12 @@
       "id": 26,
       "panels": [],
       "repeat": "GPU",
-      "title": "Current Overview: $GPU",
+      "title": "Current-Overview $GPU",
       "type": "row"
     },
     {
       "cacheTimeout": null,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -164,7 +122,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "rocm_smi",
+          "measurement": "amd_rocm_smi",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -203,7 +161,7 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -287,7 +245,7 @@
           "measurement": "rocm_smi",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT (sum(\"memory_used\")/sum(\"memory_total\")*100) FROM \"rocm_smi\" WHERE (\"host\" =~ /^$hostname$/ AND \"name\" =~ /^$GPU$/) AND $timeFilter GROUP BY time($__interval) fill(null)",
+          "query": "SELECT (sum(\"memory_used\")/sum(\"memory_total\")*100) FROM \"amd_rocm_smi\" WHERE (\"host\" =~ /^$hostname$/ AND \"name\" =~ /^$GPU$/) AND $timeFilter GROUP BY time($__interval) fill(null)",
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
@@ -325,7 +283,7 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -405,7 +363,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "rocm_smi",
+          "measurement": "amd_rocm_smi",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -444,7 +402,7 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -524,7 +482,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "rocm_smi",
+          "measurement": "amd_rocm_smi",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -563,7 +521,7 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -643,7 +601,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "rocm_smi",
+          "measurement": "amd_rocm_smi",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -682,7 +640,7 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -762,7 +720,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "rocm_smi",
+          "measurement": "amd_rocm_smi",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -801,7 +759,7 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -881,7 +839,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "rocm_smi",
+          "measurement": "amd_rocm_smi",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -920,7 +878,7 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1000,7 +958,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "rocm_smi",
+          "measurement": "amd_rocm_smi",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1039,7 +997,7 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "description": "GPU Streaming Multiprocessors clocks",
       "fieldConfig": {
         "defaults": {
@@ -1121,7 +1079,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "rocm_smi",
+          "measurement": "amd_rocm_smi",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1160,7 +1118,7 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1241,7 +1199,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "rocm_smi",
+          "measurement": "amd_rocm_smi",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1283,7 +1241,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1336,7 +1294,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "rocm_smi",
+          "measurement": "amd_rocm_smi",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1418,7 +1376,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1474,7 +1432,7 @@
           "measurement": "rocm_smi",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT (sum(\"memory_used\") / sum(\"memory_total\"))*100 FROM \"rocm_smi\" WHERE (\"host\" =~ /^$hostname$/ AND \"name\" =~ /^$GPU$/) AND $timeFilter GROUP BY time($__interval) fill(previous)",
+          "query": "SELECT (sum(\"memory_used\") / sum(\"memory_total\"))*100 FROM \"amd_rocm_smi\" WHERE (\"host\" =~ /^$hostname$/ AND \"name\" =~ /^$GPU$/) AND $timeFilter GROUP BY time($__interval) fill(previous)",
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
@@ -1555,7 +1513,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1611,7 +1569,7 @@
           "measurement": "rocm_smi",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT distinct(\"clocks_current_memory\") FROM \"rocm_smi\" WHERE (\"host\" =~ /^$hostname$/ AND \"name\" =~ /^$GPU$/) AND $timeFilter GROUP BY time($__interval) fill(null)",
+          "query": "SELECT distinct(\"clocks_current_memory\") FROM \"amd_rocm_smi\" WHERE (\"host\" =~ /^$hostname$/ AND \"name\" =~ /^$GPU$/) AND $timeFilter GROUP BY time($__interval) fill(null)",
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
@@ -1692,7 +1650,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1748,7 +1706,7 @@
           "measurement": "rocm_smi",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT distinct(\"clocks_current_sm\") FROM \"rocm_smi\" WHERE (\"host\" =~ /^$hostname$/ AND \"name\" =~ /^$GPU$/) AND $timeFilter GROUP BY time($__interval) fill(null)",
+          "query": "SELECT distinct(\"clocks_current_sm\") FROM \"amd_rocm_smi\" WHERE (\"host\" =~ /^$hostname$/ AND \"name\" =~ /^$GPU$/) AND $timeFilter GROUP BY time($__interval) fill(null)",
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
@@ -1829,7 +1787,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1882,7 +1840,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "rocm_smi",
+          "measurement": "amd_rocm_smi",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1964,7 +1922,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -2017,7 +1975,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "rocm_smi",
+          "measurement": "amd_rocm_smi",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -2148,7 +2106,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -2204,7 +2162,7 @@
           "measurement": "rocm_smi",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT distinct(\"temperature_sensor_edge\") FROM \"rocm_smi\" WHERE (\"host\" =~ /^$hostname$/ AND \"name\" =~ /^$GPU$/) AND $timeFilter GROUP BY time($__interval) fill(null)",
+          "query": "SELECT distinct(\"temperature_sensor_edge\") FROM \"amd_rocm_smi\" WHERE (\"host\" =~ /^$hostname$/ AND \"name\" =~ /^$GPU$/) AND $timeFilter GROUP BY time($__interval) fill(null)",
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
@@ -2299,7 +2257,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "InfluxDB",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -2352,7 +2310,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "rocm_smi",
+          "measurement": "amd_rocm_smi",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -2435,7 +2393,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 123
+        "y": 41
       },
       "id": 24,
       "panels": [],
@@ -2444,7 +2402,7 @@
       "type": "row"
     }
   ],
-  "refresh": "10s",
+  "refresh": "",
   "schemaVersion": 30,
   "style": "dark",
   "tags": [
@@ -2455,8 +2413,12 @@
     "list": [
       {
         "allValue": null,
-        "current": {},
-        "datasource": "${DS_INFLUXDB}",
+        "current": {
+          "selected": false,
+          "text": "ali47xl",
+          "value": "ali47xl"
+        },
+        "datasource": "InfluxDB",
         "definition": "SHOW TAG VALUES FROM \"rocm_smi\" WITH KEY = \"host\"",
         "description": null,
         "error": null,
@@ -2478,8 +2440,12 @@
       },
       {
         "allValue": null,
-        "current": {},
-        "datasource": "${DS_INFLUXDB}",
+        "current": {
+          "selected": false,
+          "text": "card0",
+          "value": "card0"
+        },
+        "datasource": "InfluxDB",
         "definition": "SHOW TAG VALUES FROM \"rocm_smi\" WITH KEY = \"name\" WHERE host =~ /$hostname/",
         "description": null,
         "error": null,
@@ -2502,7 +2468,7 @@
     ]
   },
   "time": {
-    "from": "now-30m",
+    "from": "now-6h",
     "to": "now"
   },
   "timepicker": {
@@ -2533,5 +2499,5 @@
   "timezone": "",
   "title": "ROCm Graphs",
   "uid": "d3rSH8Gnk",
-  "version": 13
+  "version": 14
 }
